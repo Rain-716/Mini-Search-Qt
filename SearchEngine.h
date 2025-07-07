@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <set> // Added for std::set
 
 struct SearchResult
 {
@@ -14,14 +15,14 @@ struct SearchResult
 
 class SearchEngine
 {
-    public:
-        void loadDirectory(const std::string& dir);
-        std::vector<SearchResult> search(const std::string& query);
+public:
+    void loadDirectory(const std::string& dir);
+    std::vector<SearchResult> search(const std::string& query);
 
-    private:
-        // word -> file -> set of line numbers
-        std::unordered_map<std::string,std::unordered_map<std::string,std::vector<int>>> index;
-        std::unordered_map<std::string,std::vector<std::string>> fileLines;
+private:
+    // word -> file -> set of line numbers
+    std::unordered_map<std::string, std::unordered_map<std::string, std::vector<int>>> index;
+    std::unordered_map<std::string, std::vector<std::string>> fileLines;
 };
 
 #endif // SEARCHENGINE_H

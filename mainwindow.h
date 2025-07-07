@@ -11,23 +11,23 @@
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    public:
-        MainWindow(QWidget* parent=nullptr);
-        ~MainWindow();
+public:
+    MainWindow(QWidget* parent = nullptr);
+    ~MainWindow();
 
-    private slots:
-        void selectDirectory();
-        void performSearch();
+private slots:
+    void selectDirectory();
+    void performSearch(); // 此函数将从文件中读取查询
 
-    private:
-        QLineEdit* dirEdit;
-        QPushButton* dirButton;
-        QLineEdit* queryEdit;
-        QPushButton* searchButton;
-        QTreeWidget* resultView;
-        QLabel* statusLabel;
+private:
+    QLineEdit* dirEdit;
+    QPushButton* dirButton;
+    QLineEdit* queryEdit; // 依然保留，但不再用于用户输入查询
+    QPushButton* searchButton;
+    QTreeWidget* resultView;
+    QLabel* statusLabel;
 
-        SearchEngine engine;
+    SearchEngine engine;
 };
 
 #endif // MAINWINDOW_H
