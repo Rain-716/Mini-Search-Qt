@@ -13,7 +13,6 @@ qt_add_executable(Mini_Search_Qt
     mainwindow.ui
     SearchEngine.h
     SearchEngine.cpp
-
 )
 
 qt_add_translations(
